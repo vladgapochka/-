@@ -1,10 +1,18 @@
-# puts "hello world" # Комментарий
+# puts "hello world" # Комментарий 1.1
 =begin
 многострочный коментарий
 =end
 
-# выводим приветствие
-puts "Приветствую #{ARGV[0]}"
-# получаем методы класса String
-puts String.instance_methods
+# выводим приветствие задание 1.2
+# puts "Приветствую #{ARGV[0]}"
+# puts String.instance_methods
+# Задание 1.3
+puts "Введите свой любимый язык программировани:"
+l = gets.chomp
+puts("подлиза") if l == "ruby"
+puts("скоро будет ruby, а так ты молодец") if l == "питон"
+puts("скоро будет ruby,но с++ фу") if l == "с++"
+puts("скоро будет ruby, но ты слабый") if l == "с#"
+puts("скоро будет ruby, ты вообще больной?") if l == "паскаль"
+
 
