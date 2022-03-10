@@ -7,7 +7,7 @@
 # end
 # puts sum
 # Задание 2
-x=ARGV[0].to_i
+b=ARGV[0].to_i
 
 
 # def method_sum(x)
@@ -53,14 +53,36 @@ x=ARGV[0].to_i
 # puts method_max(x)
 # puts method_proiz(x)
 # Задание 3.2
-def method_max(x)
-	max=0
-	while x !=0
-		if (x%10)%3!=0 and x %10>max
-			max=x%10
+# def method_max(x)
+# 	max=0
+# 	while x !=0
+# 		if (x%10)%3!=0 and x %10>max
+# 			max=x%10
+# 		end
+# 		x=x/10
+# 	end
+# 	puts max
+# end
+# method_max(x)
+#Задание 3.1
+
+def nod(a,b)
+	while a!=0 and b!=0
+		if a>b
+			a=a%b
+		else
+			b=b%a
 		end
-		x=x/10
 	end
-	puts max
+	return a+b
 end
-method_max(x)
+def kol_ch_nod(b)
+	col = 0
+	for i in (1..b)
+		if i%2==0 and nod(i,b)!= 1
+			col = col +1
+		end 
+	end
+	puts col
+end
+kol_ch_nod(b)
