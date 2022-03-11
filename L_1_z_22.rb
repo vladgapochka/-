@@ -7,7 +7,7 @@
 # end
 # puts sum
 # Задание 2
-b=ARGV[0].to_i
+# x=ARGV[0].to_i
 
 
 # def method_sum(x)
@@ -65,24 +65,67 @@ b=ARGV[0].to_i
 # end
 # method_max(x)
 #Задание 3.1
-
-def nod(a,b)
-	while a!=0 and b!=0
-		if a>b
-			a=a%b
-		else
-			b=b%a
+# b=ARGV[0].to_i
+# def nod(a,b)
+# 	while a!=0 and b!=0
+# 		if a>b
+# 			a=a%b
+# 		else
+# 			b=b%a
+# 		end
+# 	end
+# 	return a+b
+# end
+# def kol_ch_nod(b)
+# 	col = 0
+# 	for i in (1..b)
+# 		if i%2==0 and nod(i,b)!= 1
+# 			col = col +1
+# 		end 
+# 	end
+# 	puts col
+# end
+# kol_ch_nod(b)
+# Массив
+#Задание 3.1
+#Сумма
+list = Array[1,2,3,4]
+def sum_el(list)
+  	sum = 0
+  	for i in list
+    	sum += i
+  	end
+  	puts sum
+end
+sum_el(list)
+#Произведение 
+def pr_el(list)
+	pr = 1
+	for i in list
+		pr *= i
+	end
+	puts pr
+end
+pr_el(list)
+#Максимум
+def max_el(list)
+	max = list.first
+	for i in list
+		if i > max 
+			max = i
+			end
+	end
+	puts max
+end
+max_el(list)
+#Минимум
+def min_el(list)
+	min = list.last
+	for i in list
+		if i< min 
+			min = i
 		end
 	end
-	return a+b
+	puts min
 end
-def kol_ch_nod(b)
-	col = 0
-	for i in (1..b)
-		if i%2==0 and nod(i,b)!= 1
-			col = col +1
-		end 
-	end
-	puts col
-end
-kol_ch_nod(b)
+min_el(list)
