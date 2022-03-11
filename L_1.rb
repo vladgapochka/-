@@ -1,38 +1,72 @@
-b=ARGV[0].to_i
-
-def nod(a,b)
-  while a!=0 and b!=0
-    if a>b
-      a=a%b
-    else
-      b=b%a
+def sum_el(list)
+    sum = 0
+    for i in list
+      sum += i
     end
-  end
-  return a+b
+    puts sum
 end
-def max_nod(b)
-  max = 0
-  col = 0
-  for i in (1..b)
-    if nod(i,b)!= 1 and i>max 
+def pr_el(list)
+  pr = 1
+  for i in list
+    pr *= i
+  end
+  puts pr
+end
+def max_el(list)
+  max = list.first
+  for i in list
+    if i > max 
       max = i
-    end 
+      end
   end
-  return max
+  puts max
 end
-def sum_ch_mp(b)
-  sum = 0
-  while b != 0
-    if b%10 < 5
-      sum += b%10
-      b = b/10
-      else
-      b=b/10
+def min_el(list)
+  min = list.last
+  for i in list
+    if i< min 
+      min = i
     end
   end
-  return sum
+  puts min
+end
+puts "Выберите метод: "
+puts "Сумма элементов - 1"
+puts "Произведение элементов - 2"
+puts "Минимальный элемент - 3"
+puts "Максимальный элемент - 4"
+num = gets.to_i
+puts "Выберите откуда вы хотите считать данные?"
+puts "С клавиатуры - 1"
+puts "С файла - 2"
+from_where=gets.chop.to_i
+list = Array.new
+if from_where == 2
+  file=gets.chop
+  File.open(file, "r") do |f|
+    while (line = f.gets)
+      list.append(line.to_i)
+    end
+  end
+else 
+  if from_where == 1
+    el = gets
+    until el == "\n"
+      list.append(el.to_i)
+      el = gets
+    end
+  end
 end
 
-one=sum_ch_mp(b)
-two=max_nod(b)
-puts (one*two)
+case num
+when 1 
+  puts sum_el(list)
+when 2
+  puts pr_el(list)
+when 3
+  puts min_el(list)
+when 4
+  puts max_el(list)
+else
+  puts "Ошибка!"
+end
