@@ -2,6 +2,11 @@ def m_1(list)
   m = list
   puts (0...m.size).sort_by{ |i| m[i] }.reverse
 end
+def m_2(list)
+  a = list
+  b = a[(a.index(a.max) + 1)..-1]
+  puts b[0...b.index(b.max)]
+end
 puts "Выберите метод: "
 puts "Сумма элементов - 1"
 puts "Произведение элементов - 2"
@@ -33,6 +38,8 @@ end
 case num
 when 1 
   puts m_1(list)
+when 2
+  puts m_2(list)
 else
   puts "Ошибка!"
 end
