@@ -7,6 +7,13 @@ def m_2(list)
   b = a[(a.index(a.max) + 1)..-1]
   puts b[0...b.index(b.max)]
 end
+def m_3(list)
+  
+  a=list.index(list.max)
+  list=list[a+1..-1].reverse
+  a=list.index(list.max)
+  list=list[0..a-1].reverse
+end
 puts "Выберите метод: "
 puts "Сумма элементов - 1"
 puts "Произведение элементов - 2"
@@ -40,6 +47,8 @@ when 1
   puts m_1(list)
 when 2
   puts m_2(list)
+when 3
+  puts m_3(list)
 else
   puts "Ошибка!"
 end
