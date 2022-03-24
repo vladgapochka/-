@@ -14,6 +14,9 @@ def m_3(list)
   a=list.index(list.max)
   list=list[0..a-1].reverse
 end
+def m_4(list)
+  list.select{ |i| i.even? }.min
+end
 puts "Выберите метод: "
 puts "Сумма элементов - 1"
 puts "Произведение элементов - 2"
@@ -49,6 +52,8 @@ when 2
   puts m_2(list)
 when 3
   puts m_3(list)
+when 4
+  puts m_4(list)
 else
   puts "Ошибка!"
 end
